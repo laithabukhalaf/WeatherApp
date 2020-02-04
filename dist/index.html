@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.css" >
+    <script src="https://kit.fontawesome.com/cbebce3ba1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <title>weather</title>
+</head>
+<body>
+
+   
+
+  <input id='city-Input' placeholder='Please enter a city name:'></input>
+    <button id="search">search</button>
+    <div class="results"></div>
+   
+
+    <script id="weather-template" type="text/x-handlebars-template">
+    {{#each this}}
+    <div id="city">
+      <div class="name">{{name}}</div>
+      <div class="temperature">{{temperature}}</div>
+      <div class="conditions">{{condition}}</div>
+      <img class="conditionPic" src="{{conditionPic}}">
+      <div class="humidity">{{humidity}}</div>
+      <i id='saveBtn' class="far fa-save"  style="font-size:60px;color:blue"></i>
+      <i id='dltBtn' class="far fa-trash-alt"  style="font-size:60px;color:red"></i>
+      <i id='rfrBtn' class="fas fa-redo-alt" style="font-size:60px;color:orangered"></i>
+
+    </div>
+    {{/each}}
+    
+    </script>
+
+    
+    
+
+
+
+    
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="TempManager.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
