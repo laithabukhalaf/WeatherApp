@@ -13,7 +13,8 @@ app.use( '/', api )
 
 // Mongoose setup
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/weatherapp', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/weatherapp', { useNewUrlParser: true })
+
 
 
 
@@ -21,6 +22,6 @@ mongoose.connect('mongodb://localhost/weatherapp', { useNewUrlParser: true })
 
 
 const port = 3000
-app.listen(port, function () {
+app.listen(process.env.port || port, function () {
     console.log(`Running on port ${port}`)
 })
